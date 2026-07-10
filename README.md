@@ -12,3 +12,4 @@
 ## 目次
 
 - [2026-07-09: git worktree と checkout の違い](notes/2026-07-09-git-worktree-and-checkout.md)
+- [2026-07-10: CLAUDE.mdの役割と活用方法](notes/2026-07-10-claude-md-usage.md)

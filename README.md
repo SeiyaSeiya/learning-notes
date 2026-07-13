@@ -15,3 +15,4 @@
 - [2026-07-10: CLAUDE.mdの役割と活用方法](notes/2026-07-10-claude-md-usage.md)
 - [2026-07-11: Claude Desktop（Cowork）とCLIの違い](notes/2026-07-11-claude-desktop-vs-cli.md)
 - [2026-07-12: AI生成コードの品質責任とエンジニアとしての調査プロセス](notes/2026-07-12-ai-code-and-investigation-process.md)
+- [2026-07-13: VS CodeでのClaude Code（ターミナル版）運用と効率化](notes/2026-07-13-claude-code-cli-and-vscode-integration.md)

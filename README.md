@@ -17,3 +17,4 @@
 - [2026-07-12: AI生成コードの品質責任とエンジニアとしての調査プロセス](notes/2026-07-12-ai-code-and-investigation-process.md)
 - [2026-07-13: VS CodeでのClaude Code（ターミナル版）運用と効率化](notes/2026-07-13-claude-code-cli-and-vscode-integration.md)
 - [2026-07-13: GASでスプレッドシートの列幅を確実に確保する方法（autoResizeColumnsの落とし穴）](notes/2026-07-13-gas-sheets-column-width.md)
+- [2026-07-14: launchdによるlearning-notesリポジトリの自動commit・push設定](notes/2026-07-14-launchd-auto-commit.md)

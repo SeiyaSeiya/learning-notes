@@ -62,3 +62,4 @@ tail -f ~/.claude/cron-logs/learning-notes-auto-commit.log
 - [2026-07-14: launchdによるlearning-notesリポジトリの自動commit・push設定](notes/2026-07-14-launchd-auto-commit.md)
 - [2026-07-14: clasp v3のコマンド変更と、git worktreeが引き起こす.claspignoreの落とし穴](notes/2026-07-14-clasp-v3-and-claspignore.md)
 - [2026-07-14: Slack Bot連携で実際に必要になる認証情報の見分け方（Client ID/App IDとBot Tokenの違い）](notes/2026-07-14-slack-bot-credentials.md)
+- [2026-07-16: BigQueryの操作をショートカット化する方法とVS Code移行の検討](notes/2026-07-16-bigquery-shortcuts-and-vscode-workflow.md)

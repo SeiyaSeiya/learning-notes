@@ -66,3 +66,4 @@ tail -f ~/.claude/cron-logs/learning-notes-auto-commit.log
 - [2026-07-17: Google スプレッドシートで特定のシートを別ファイルにコピーする方法](notes/2026-07-17-google-sheets-copy-tab-to-another-file.md)
 - [2026-07-18: BigQueryでビュー・テーブルを作成し、スケジュールクエリ（トリガー）で定期反映する方法](notes/2026-07-18-bigquery-view-table-and-scheduled-query.md)
 - [2026-07-19: Vimの基本操作](notes/2026-07-19-vim-basic-operations.md)
+- [2026-07-20: Claude Skillsとは何か：概要と使い方](notes/2026-07-20-claude-skills.md)

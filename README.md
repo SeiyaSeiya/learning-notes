@@ -67,3 +67,4 @@ tail -f ~/.claude/cron-logs/learning-notes-auto-commit.log
 - [2026-07-18: BigQueryでビュー・テーブルを作成し、スケジュールクエリ（トリガー）で定期反映する方法](notes/2026-07-18-bigquery-view-table-and-scheduled-query.md)
 - [2026-07-19: Vimの基本操作](notes/2026-07-19-vim-basic-operations.md)
 - [2026-07-20: Claude Skillsとは何か：概要と使い方](notes/2026-07-20-claude-skills.md)
+- [2026-07-21: アンケートVOC抽出作業とopenpyxlの基礎、業務効率化アプローチの考察](notes/2026-07-21-voc-extraction-and-openpyxl.md)

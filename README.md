@@ -70,3 +70,4 @@ tail -f ~/.claude/cron-logs/learning-notes-auto-commit.log
 - [2026-07-21: アンケートVOC抽出作業とopenpyxlの基礎、業務効率化アプローチの考察](notes/2026-07-21-voc-extraction-and-openpyxl.md)
 - [2026-07-21: BigQueryの分析用テーブルに対するテストSQL作成の観点整理](notes/2026-07-21-bigquery-list-table-testing-checklist.md)
 - [2026-07-21: BigQueryのスクリプト機能（DECLARE / CREATE TEMP TABLE / IF文）の基礎](notes/2026-07-21-bigquery-script-temp-table.md)
+- [2026-07-21: BigQueryのTIMESTAMP→DATETIME変換と、スケジュールクエリの手動即時実行](notes/2026-07-21-bigquery-timestamp-datetime-and-manual-scheduled-query.md)

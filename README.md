@@ -72,3 +72,4 @@ tail -f ~/.claude/cron-logs/learning-notes-auto-commit.log
 - [2026-07-21: BigQueryのスクリプト機能（DECLARE / CREATE TEMP TABLE / IF文）の基礎](notes/2026-07-21-bigquery-script-temp-table.md)
 - [2026-07-21: BigQueryのTIMESTAMP→DATETIME変換と、スケジュールクエリの手動即時実行](notes/2026-07-21-bigquery-timestamp-datetime-and-manual-scheduled-query.md)
 - [2026-07-23: SQL: SELECT句内のサブクエリ（スカラ・サブクエリと相関サブクエリ）の挙動](notes/2026-07-23-sql-scalar-and-correlated-subqueries.md)
+- [2026-07-24: Claudeのアーティファクト（Artifacts）とは何か](notes/2026-07-24-claude-artifacts.md)

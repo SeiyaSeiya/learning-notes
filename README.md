@@ -74,3 +74,4 @@ tail -f ~/.claude/cron-logs/learning-notes-auto-commit.log
 - [2026-07-23: SQL: SELECT句内のサブクエリ（スカラ・サブクエリと相関サブクエリ）の挙動](notes/2026-07-23-sql-scalar-and-correlated-subqueries.md)
 - [2026-07-24: Claudeのアーティファクト（Artifacts）とは何か](notes/2026-07-24-claude-artifacts.md)
 - [2026-07-24: GASの既存プロジェクトに手動実行フローを追加する勘所（Sheetsの日付自動変換・関数流用・列順整合）](notes/2026-07-24-gas-add-manual-flow-and-sheets-date-pitfall.md)
+- [2026-07-26: GASによるシステム開発で重要な設計概念（疎結合・べき等性・実行時間対策など）](notes/2026-07-26-gas-system-design-concepts.md)

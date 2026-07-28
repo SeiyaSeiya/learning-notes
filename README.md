@@ -76,3 +76,4 @@ tail -f ~/.claude/cron-logs/learning-notes-auto-commit.log
 - [2026-07-24: GASの既存プロジェクトに手動実行フローを追加する勘所（Sheetsの日付自動変換・関数流用・列順整合）](notes/2026-07-24-gas-add-manual-flow-and-sheets-date-pitfall.md)
 - [2026-07-26: GASによるシステム開発で重要な設計概念（疎結合・べき等性・実行時間対策など）](notes/2026-07-26-gas-system-design-concepts.md)
 - [2026-07-27: 外部SaaSの仕様変更で自動処理が「静かに」壊れた話（Google Meetの保存先移行とDrive走査の移行対応）](notes/2026-07-27-google-meet-drive-folder-migration-and-silent-failure.md)
+- [2026-07-28: 実運用ログからの切り分けと、"安全弁"の閾値を実測で決めるということ（Driveのショートカット権限・外部リソースはIDで解決される）](notes/2026-07-28-drive-shortcut-permissions-and-failsafe-threshold.md)

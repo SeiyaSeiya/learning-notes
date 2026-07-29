@@ -78,3 +78,4 @@ tail -f ~/.claude/cron-logs/learning-notes-auto-commit.log
 - [2026-07-27: 外部SaaSの仕様変更で自動処理が「静かに」壊れた話（Google Meetの保存先移行とDrive走査の移行対応）](notes/2026-07-27-google-meet-drive-folder-migration-and-silent-failure.md)
 - [2026-07-28: 実運用ログからの切り分けと、"安全弁"の閾値を実測で決めるということ（Driveのショートカット権限・外部リソースはIDで解決される）](notes/2026-07-28-drive-shortcut-permissions-and-failsafe-threshold.md)
 - [2026-07-29: Googleドライブで「親フォルダより厳しい制限」を子フォルダにかける方法（2025/9/22仕様変更後の正しいやり方）](notes/2026-07-29-google-drive-folder-permission-restriction.md)
+- [2026-07-29: BigQueryでビューからテーブルを新規作成しようとして「マテリアライズド ビューのレプリカ作成」画面に迷い込んだ話](notes/2026-07-29-bigquery-create-table-from-view-materialized-replica-pitfall.md)

@@ -66,6 +66,44 @@ cd "$REPO_DIR" || {
   exit 1
 }
 
+# 幽霊ロック（stale lock）の自動解消
+# git操作の異常終了（rebase/amend中の強制終了等）で .git/index.lock や .git/HEAD.lock が
+# 残ると、以後のgit commitが理由不明のまま失敗し続ける。
+# 一定時間以上前のタイムスタンプで、かつ実際に稼働中のgitプロセスが無い場合のみ
+# 「幽霊ロック」とみなして自動削除する。
+STALE_LOCK_THRESHOLD_SEC=600  # 10分
+
+remove_stale_lock_if_safe() {
+  local lock_file="$1"
+  [ -f "$lock_file" ] || return 0
+
+  local lock_mtime now age
+  lock_mtime="$(stat -f %m "$lock_file" 2>/dev/null)"
+  if [ -z "$lock_mtime" ]; then
+    log "WARN: failed to stat $lock_file; skipping stale-lock check for this file."
+    return 0
+  fi
+
+  now="$(date +%s)"
+  age=$((now - lock_mtime))
+
+  if [ "$age" -lt "$STALE_LOCK_THRESHOLD_SEC" ]; then
+    log "LOCK PRESENT: $lock_file is only ${age}s old (< ${STALE_LOCK_THRESHOLD_SEC}s). Another git process may genuinely be running; leaving it alone."
+    return 0
+  fi
+
+  if pgrep -f "git.*${REPO_DIR}" >/dev/null 2>&1; then
+    log "WARN: $lock_file is ${age}s old but a git process referencing $REPO_DIR is still running. Not deleting (not safe)."
+    return 0
+  fi
+
+  log "STALE LOCK: removing $lock_file (age ${age}s, no active git process found for $REPO_DIR)."
+  rm -f "$lock_file"
+}
+
+remove_stale_lock_if_safe "$REPO_DIR/.git/index.lock"
+remove_stale_lock_if_safe "$REPO_DIR/.git/HEAD.lock"
+
 # 安全策: mainブランチ以外では絶対に何もしない
 current_branch="$("$GIT" rev-parse --abbrev-ref HEAD 2>&1)"
 if [ "$current_branch" != "$BRANCH" ]; then

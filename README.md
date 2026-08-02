@@ -81,3 +81,4 @@ tail -f ~/.claude/cron-logs/learning-notes-auto-commit.log
 - [2026-07-29: BigQueryでビューからテーブルを新規作成しようとして「マテリアライズド ビューのレプリカ作成」画面に迷い込んだ話](notes/2026-07-29-bigquery-create-table-from-view-materialized-replica-pitfall.md)
 - [2026-07-30: 過去のcommitを修正する方法（amend / rebase -i / reset+cherry-pick）と、force pushでの反映のさせ方](notes/2026-07-30-git-commit-history-rewrite-amend-rebase-cherrypick.md)
 - [2026-08-01: ターミナルの文字列をマウスなしでコピーする方法](notes/2026-08-01-terminal-copy-without-mouse.md)
+- [2026-08-02: learning-notesの自動commitが数日間失敗し続けた原因（`.git/index.lock`の幽霊ロック）](notes/2026-08-02-git-index-lock-auto-commit-failure.md)

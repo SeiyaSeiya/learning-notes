@@ -216,3 +216,4 @@ git push --force origin main   # リモートの先端を上書き
 
 * **反映手順**: plistを上記の形に書き換え → `plutil -lint`で構文確認 → `launchctl unload` → `launchctl load`で再登録 → `launchctl list | grep learningnotes`で登録確認。
 * plist自体はリポジトリ外（`~/Library/LaunchAgents/`）にあるため、この変更はリポジトリのcommit対象には含まれない。次回の自動実行（6:30 or 18:30）で正しく2回動いているかは、ログ（`~/.claude/cron-logs/learning-notes-auto-commit.log`）のタイムスタンプで確認する。
+* 実際に「登録済みplistの編集・反映」を行った際の詳しい手順・反映確認のハマりどころ（`plutil -p`と`launchctl print`の違い、labelのプレースホルダー置き換え忘れ、`launchctl print`の出力フォーマットの罠など）は、別メモ [2026-08-03: 登録済みlaunchd plistの編集・再反映手順とハマりどころ](2026-08-03-launchd-plist-edit-and-reload.md) にまとめた。

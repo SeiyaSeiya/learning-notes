@@ -11,7 +11,7 @@
 
 ## 自動commit・push（launchd）
 
-このリポジトリの変更は、毎日6:30にmacOSの`launchd`経由で自動的にcommit・pushされる。詳しい設計・検証の経緯は [2026-07-14: launchdによるlearning-notesリポジトリの自動commit・push設定](notes/2026-07-14-launchd-auto-commit.md) を参照。
+このリポジトリの変更は、毎日6:30と18:30の1日2回、macOSの`launchd`経由で自動的にcommit・pushされる。詳しい設計・検証の経緯は [2026-07-14: launchdによるlearning-notesリポジトリの自動commit・push設定](notes/2026-07-14-launchd-auto-commit.md) を参照。
 
 ### スクリプト
 - 本体: [scripts/learning-notes-auto-commit.sh](scripts/learning-notes-auto-commit.sh)

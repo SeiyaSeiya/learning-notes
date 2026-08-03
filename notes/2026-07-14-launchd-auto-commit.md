@@ -1,7 +1,7 @@
 # launchdによるlearning-notesリポジトリの自動commit・push設定
 
 ## 概要
-毎回「変更をcommit・pushして」とClaude Codeに手動で依頼するのが煩雑だったため、macOSの`launchd`を使って毎日6:30に自動でcommit・pushする仕組みを構築した。`cron`ではなく`launchd`を選んだ理由と、実装時に気をつけたポイントをまとめる。
+毎回「変更をcommit・pushして」とClaude Codeに手動で依頼するのが煩雑だったため、macOSの`launchd`を使って自動でcommit・pushする仕組みを構築した。当初は毎日6:30の1回のみだったが、その後6:30と18:30の1日2回に変更した（詳細は末尾の追記を参照）。`cron`ではなく`launchd`を選んだ理由と、実装時に気をつけたポイントをまとめる。
 
 ## なぜcronではなくlaunchdか
 * `cron`はMacがスリープ中だった時刻の実行を単純にスキップする。
@@ -103,12 +103,20 @@ plistはXMLベースの設定ファイルで、以下の型のみを組み合わ
     </array>
 
     <key>StartCalendarInterval</key>
-    <dict>
-        <key>Hour</key>
-        <integer>6</integer>
-        <key>Minute</key>
-        <integer>30</integer>
-    </dict>
+    <array>
+        <dict>
+            <key>Hour</key>
+            <integer>6</integer>
+            <key>Minute</key>
+            <integer>30</integer>
+        </dict>
+        <dict>
+            <key>Hour</key>
+            <integer>18</integer>
+            <key>Minute</key>
+            <integer>30</integer>
+        </dict>
+    </array>
 
     <key>EnvironmentVariables</key>
     <dict>
@@ -180,3 +188,31 @@ git push --force origin main   # リモートの先端を上書き
   * 対象リポジトリの外（`~/bin/`, `~/dotfiles/scripts/`等）に置く: マシンの自動化・cronジョブを個人のdotfiles的な場所にまとめる考え方。特に今回はスクリプト自身が対象リポジトリをauto-commit/pushするため、リポジトリ内に置くと「スクリプトの変更差分も次回実行時に自動commitされる」という自己言及的な構造になる点に留意が必要。
   * 対象リポジトリの中（`scripts/`等）に置く: リポジトリを他マシンへ持ち運ぶ際にスクリプトごとgit cloneで復元できる利点がある。
 * 今回は「リポジトリと一緒に持ち運びたい」という意図から、リポジトリ内(`scripts/`配下)への配置を選んだ。移動後、plistの`ProgramArguments`を新パスに書き換え、`unload` → `load`で再登録し、手動実行・launchd実行の両方で改めてcommit・push成功を確認した。
+
+## 追記（2026-08-03）: 1日2回（6:30・18:30）への変更
+
+夕方分の変更も同日中にcommit・pushしたく、実行を1日1回（6:30）から2回（6:30・18:30）に変更した。
+
+* **スクリプト（`learning-notes-auto-commit.sh`）側の変更は不要**: スクリプトは「呼ばれた時点の未コミット変更を検知してcommit・push」するだけで、時刻に関するロジックを一切持たない設計になっているため、実行回数・実行時刻が増えても無修正でそのまま動く。
+* **変更が必要なのはplistの`StartCalendarInterval`のみ**: 1時刻のみの場合は`<dict>`1つだが、複数時刻を指定する場合は`<dict>`を`<array>`で囲んで並べる（本メモ内のサンプルも更新済み）。
+
+  ```xml
+  <key>StartCalendarInterval</key>
+  <array>
+      <dict>
+          <key>Hour</key>
+          <integer>6</integer>
+          <key>Minute</key>
+          <integer>30</integer>
+      </dict>
+      <dict>
+          <key>Hour</key>
+          <integer>18</integer>
+          <key>Minute</key>
+          <integer>30</integer>
+      </dict>
+  </array>
+  ```
+
+* **反映手順**: plistを上記の形に書き換え → `plutil -lint`で構文確認 → `launchctl unload` → `launchctl load`で再登録 → `launchctl list | grep learningnotes`で登録確認。
+* plist自体はリポジトリ外（`~/Library/LaunchAgents/`）にあるため、この変更はリポジトリのcommit対象には含まれない。次回の自動実行（6:30 or 18:30）で正しく2回動いているかは、ログ（`~/.claude/cron-logs/learning-notes-auto-commit.log`）のタイムスタンプで確認する。

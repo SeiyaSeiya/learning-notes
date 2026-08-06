@@ -84,3 +84,4 @@ tail -f ~/.claude/cron-logs/learning-notes-auto-commit.log
 - [2026-08-02: learning-notesの自動commitが数日間失敗し続けた原因（`.git/index.lock`の幽霊ロック）](notes/2026-08-02-git-index-lock-auto-commit-failure.md)
 - [2026-08-03: 登録済みlaunchd plistの編集・再反映手順とハマりどころ](notes/2026-08-03-launchd-plist-edit-and-reload.md)
 - [2026-08-03: `.git/index.lock`の自動解消閾値をすり抜けて手動実行が失敗した件](notes/2026-08-03-git-index-lock-stale-threshold-retry.md)
+- [2026-08-06: claspでスタンドアロン型のGASプロジェクトを新規作成し、Hello Worldをpushするまで](notes/2026-08-06-clasp-standalone-create-and-push.md)

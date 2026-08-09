@@ -86,3 +86,4 @@ tail -f ~/.claude/cron-logs/learning-notes-auto-commit.log
 - [2026-08-03: `.git/index.lock`の自動解消閾値をすり抜けて手動実行が失敗した件](notes/2026-08-03-git-index-lock-stale-threshold-retry.md)
 - [2026-08-06: claspでスタンドアロン型のGASプロジェクトを新規作成し、Hello Worldをpushするまで](notes/2026-08-06-clasp-standalone-create-and-push.md)
 - [2026-08-08: フォールバック処理とは何か、GAS開発でどう実装するか](notes/2026-08-08-fallback-processing-and-gas.md)
+- [2026-08-09: claspで複数のGoogleアカウントを切り替える方法（Chromeプロファイルのような運用を`--user`で実現する）](notes/2026-08-09-clasp-multiple-accounts-user-flag.md)

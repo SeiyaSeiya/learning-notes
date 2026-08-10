@@ -138,6 +138,20 @@ claude_exit=$?
 log "claude exit code: $claude_exit"
 log "claude output (truncated): $(printf '%s' "$claude_output" | tr '\n' ' ' | cut -c1-800)"
 
+# claudeコマンドが失敗した場合、ログファイルだけでなくターミナルにも
+# はっきり分かる形で出力する（手動実行時に気づけるようにするため）。
+if [ "$claude_exit" -ne 0 ]; then
+  echo "" >&2
+  echo "⚠️  claude コマンドが失敗しました (exit $claude_exit)" >&2
+  if printf '%s' "$claude_output" | grep -qi "not logged in"; then
+    echo "⚠️  Claude Code CLI が未ログインです。次を実行して再ログインしてください:" >&2
+    echo "    claude /login" >&2
+  else
+    printf '%s\n' "$claude_output" >&2
+  fi
+  echo "" >&2
+fi
+
 after_head="$("$GIT" rev-parse HEAD)"
 
 if [ "$before_head" = "$after_head" ]; then

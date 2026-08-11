@@ -89,3 +89,4 @@ tail -f ~/.claude/cron-logs/learning-notes-auto-commit.log
 - [2026-08-09: claspで複数のGoogleアカウントを切り替える方法（Chromeプロファイルのような運用を`--user`で実現する）](notes/2026-08-09-clasp-multiple-accounts-user-flag.md)
 - [2026-08-10: GASライブラリ×コンテナの2階層構成で「ファイル単位Drive転送」プロトタイプを作って学んだこと](notes/2026-08-10-gas-library-container-file-level-drive-transfer.md)
 - [2026-08-10: Claude Code CLIの未ログインで自動commitが失敗した件（`.git/index.lock`の幽霊ロックとは別原因）](notes/2026-08-10-claude-cli-not-logged-in-auto-commit-failure.md)
+- [2026-08-11: Claude Codeの「フォーク」機能とは何か：追加時期と使い方](notes/2026-08-11-claude-code-fork-feature.md)

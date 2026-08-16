@@ -92,3 +92,5 @@ tail -f ~/.claude/cron-logs/learning-notes-auto-commit.log
 - [2026-08-11: Claude Codeの「フォーク」機能とは何か：追加時期と使い方](notes/2026-08-11-claude-code-fork-feature.md)
 - [2026-08-13: Googleドライブに「Slackのグループ」に相当する機能はあるか：Googleグループ＋共有ドライブでの実現方法](notes/2026-08-13-google-drive-group-sharing-via-shared-drive.md)
 - [2026-08-14: 仕事の生産性低下と「未完了タスクの同時保持」問題：マルチタスク仮説とツァイガルニク効果](notes/2026-08-14-productivity-multitasking-zeigarnik-effect.md)
+- [2026-08-16: claspの`clasp push`が「Project settings not found」で失敗する原因と、1リポジトリに複数push先を持つ構成について](notes/2026-08-16-clasp-push-project-settings-not-found.md)
+- [2026-08-16: SETUP.mdとREADME.mdの違い、そしてSETUP.mdという慣習の位置づけ](notes/2026-08-16-setup-md-vs-readme-convention.md)

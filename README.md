@@ -94,3 +94,4 @@ tail -f ~/.claude/cron-logs/learning-notes-auto-commit.log
 - [2026-08-14: 仕事の生産性低下と「未完了タスクの同時保持」問題：マルチタスク仮説とツァイガルニク効果](notes/2026-08-14-productivity-multitasking-zeigarnik-effect.md)
 - [2026-08-16: claspの`clasp push`が「Project settings not found」で失敗する原因と、1リポジトリに複数push先を持つ構成について](notes/2026-08-16-clasp-push-project-settings-not-found.md)
 - [2026-08-16: SETUP.mdとREADME.mdの違い、そしてSETUP.mdという慣習の位置づけ](notes/2026-08-16-setup-md-vs-readme-convention.md)
+- [2026-08-27: GASプロジェクトの外部公開（Webアプリ／API実行可能ファイル／ライブラリ）の仕組みと、claspでのデプロイ操作](notes/2026-08-27-gas-external-publish-webapp-api-library.md)

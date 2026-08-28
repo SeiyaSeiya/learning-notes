@@ -50,7 +50,7 @@ flowchart LR
 ```
 
 - ポイントは、ゲートウェイの分岐で「どこまでがCS担当の仕事で、どこからシステムが自動で引き取るか」が一目でわかること。ここが文章の説明だけだと一番ズレやすい部分。
-- ビジュアル版（記号の凡例つき）はClaudeのアーティファクトとして保存済み: https://claude.ai/code/artifact/66b5ffa3-ddbf-4de0-9963-9d02ab2e60fc
+- ビジュアル版（記号の凡例つき）は [2026-08-28-bpmn-notation-basics.html](2026-08-28-bpmn-notation-basics.html) としてこのリポジトリにも保存済み（単一HTMLファイルなのでブラウザで直接開ける）。Claudeのアーティファクトとしても公開中: https://claude.ai/code/artifact/66b5ffa3-ddbf-4de0-9963-9d02ab2e60fc
 
 ## 5. 作図ツールの選び方
 

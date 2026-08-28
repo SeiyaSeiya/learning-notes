@@ -1,0 +1,442 @@
+<title>BPMN作図ガイド</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;700&family=Noto+Sans+JP:wght@400;500;700&display=swap">
+<style>
+  :root {
+    --bg: #F5F6F8;
+    --surface: #FFFFFF;
+    --surface-alt: #EEF1F6;
+    --ink: #1B2130;
+    --ink-muted: #5C6478;
+    --border: #DCE0E7;
+
+    --accent: #34479A;
+    --accent-soft: #E4E8F7;
+    --system: #1F7A6C;
+    --system-soft: #DEEFEA;
+    --decision: #A8752A;
+    --decision-soft: #F3E7D2;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #14161C;
+      --surface: #1B1F28;
+      --surface-alt: #20242E;
+      --ink: #E7E9EE;
+      --ink-muted: #9CA3B5;
+      --border: #333947;
+
+      --accent: #8FA0E8;
+      --accent-soft: #262C48;
+      --system: #6FC7B4;
+      --system-soft: #1C3530;
+      --decision: #E0B268;
+      --decision-soft: #3A2E18;
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --bg: #14161C;
+    --surface: #1B1F28;
+    --surface-alt: #20242E;
+    --ink: #E7E9EE;
+    --ink-muted: #9CA3B5;
+    --border: #333947;
+
+    --accent: #8FA0E8;
+    --accent-soft: #262C48;
+    --system: #6FC7B4;
+    --system-soft: #1C3530;
+    --decision: #E0B268;
+    --decision-soft: #3A2E18;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+    font-size: 16px;
+    line-height: 1.9;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  main {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 64px 24px 96px;
+  }
+
+  .eyebrow {
+    font-size: 0.8rem;
+    letter-spacing: 0.14em;
+    color: var(--accent);
+    font-weight: 500;
+    margin: 0 0 12px;
+  }
+
+  h1 {
+    font-family: "Shippori Mincho", "Hiragino Mincho ProN", "Yu Mincho", serif;
+    font-weight: 700;
+    font-size: 2.1rem;
+    line-height: 1.5;
+    margin: 0 0 20px;
+    text-wrap: balance;
+  }
+
+  .lede {
+    color: var(--ink-muted);
+    font-size: 1.02rem;
+    max-width: 62ch;
+    margin: 0 0 8px;
+  }
+
+  section {
+    margin-top: 72px;
+    padding-top: 40px;
+    border-top: 1px solid var(--border);
+  }
+
+  section:first-of-type {
+    margin-top: 56px;
+  }
+
+  h2 {
+    font-family: "Shippori Mincho", "Hiragino Mincho ProN", "Yu Mincho", serif;
+    font-weight: 700;
+    font-size: 1.4rem;
+    margin: 0 0 8px;
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+  }
+
+  h2 .num {
+    font-family: "Noto Sans JP", sans-serif;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--accent);
+    letter-spacing: 0.06em;
+  }
+
+  h2 + .section-lede {
+    color: var(--ink-muted);
+    margin: 0 0 28px;
+    max-width: 64ch;
+  }
+
+  p { max-width: 66ch; }
+
+  p.tight { margin: 12px 0; }
+
+  strong.mark {
+    background: var(--accent-soft);
+    color: var(--ink);
+    padding: 0.05em 0.35em;
+    border-radius: 4px;
+    font-weight: 500;
+  }
+
+  .table-wrap {
+    overflow-x: auto;
+    margin: 24px 0 8px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+  }
+
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    min-width: 620px;
+    font-size: 0.92rem;
+  }
+
+  thead th {
+    text-align: left;
+    font-weight: 500;
+    color: var(--ink-muted);
+    font-size: 0.78rem;
+    letter-spacing: 0.06em;
+    padding: 12px 16px;
+    background: var(--surface-alt);
+    border-bottom: 1px solid var(--border);
+  }
+
+  tbody td {
+    padding: 14px 16px;
+    vertical-align: top;
+    border-bottom: 1px solid var(--border);
+  }
+
+  tbody tr:last-child td { border-bottom: none; }
+
+  tbody tr:nth-child(even) { background: var(--surface-alt); }
+
+  td.tool {
+    font-weight: 500;
+    white-space: nowrap;
+  }
+
+  td.when {
+    color: var(--ink-muted);
+  }
+
+  .recommend {
+    margin-top: 20px;
+    padding: 18px 20px;
+    background: var(--accent-soft);
+    border-radius: 10px;
+    font-size: 0.95rem;
+  }
+
+  .recommend b { color: var(--accent); }
+
+  .howto {
+    margin-top: 20px;
+    font-size: 0.92rem;
+    color: var(--ink-muted);
+  }
+
+  .howto code {
+    font-family: ui-monospace, "SF Mono", Consolas, monospace;
+    background: var(--surface-alt);
+    padding: 0.1em 0.4em;
+    border-radius: 4px;
+    color: var(--ink);
+    font-size: 0.85em;
+  }
+
+  figure {
+    margin: 28px 0 8px;
+    max-width: 100%;
+  }
+
+  .diagram-frame {
+    overflow-x: auto;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px 16px;
+  }
+
+  svg { display: block; }
+
+  figcaption {
+    margin-top: 12px;
+    font-size: 0.88rem;
+    color: var(--ink-muted);
+  }
+
+  .legend-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    text-align: center;
+  }
+
+  .legend-item svg { margin: 0 auto 10px; }
+
+  .legend-item .name {
+    font-weight: 500;
+    font-size: 0.9rem;
+  }
+
+  .legend-item .desc {
+    color: var(--ink-muted);
+    font-size: 0.82rem;
+    margin-top: 4px;
+    line-height: 1.6;
+  }
+
+  @media (max-width: 560px) {
+    .legend-grid { grid-template-columns: repeat(2, 1fr); row-gap: 32px; }
+  }
+
+  ol.tips {
+    padding-left: 1.3em;
+    margin: 20px 0 0;
+  }
+
+  ol.tips li {
+    margin-bottom: 14px;
+    padding-left: 4px;
+  }
+
+  ol.tips li::marker {
+    color: var(--accent);
+    font-weight: 500;
+  }
+</style>
+
+<main>
+  <p class="eyebrow">CRE &rarr; カスタマーサクセス／社内資料づくりの実践メモ</p>
+  <h1>BPMN作図ガイド</h1>
+  <p class="lede">draw.io で実際に描くための、ツールの選び方と最小限の記号、そして具体例をまとめました。</p>
+
+  <section>
+    <h2><span class="num">01</span>ツールはdraw.ioでOK</h2>
+    <p class="section-lede">結論から言うと、社内共有用にBPMNを描くなら draw.io（diagrams.net）で十分です。理由は下の表のとおりです。</p>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>ツール</th><th>特徴</th><th>こんな時に</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="tool">draw.io<br>(diagrams.net)</td>
+            <td>無料・オフラインでも使用可。公式のBPMNシェイプ一式が標準で入っている。Google Drive／ローカル／Confluenceどこにでも保存できる。</td>
+            <td class="when">今回のように「社内資料に1枚差し込む」目的にはこれで十分</td>
+          </tr>
+          <tr>
+            <td class="tool">bpmn.io<br>(Camunda)</td>
+            <td>BPMN 2.0の仕様に厳密準拠。描いた図をそのままワークフローエンジンに読み込ませられる。</td>
+            <td class="when">将来、業務フロー自体をシステムで自動実行させたくなった時</td>
+          </tr>
+          <tr>
+            <td class="tool">Lucidchart／Miro</td>
+            <td>複数人でのリアルタイム共同編集やコメントに強い。BPMN専用ではないが図形は揃っている。</td>
+            <td class="when">打ち合わせをしながら複数人で同時に描きたい時</td>
+          </tr>
+          <tr>
+            <td class="tool">PowerPoint／<br>Googleスライド</td>
+            <td>丸・四角・矢印だけで簡易的に代用。記法としての厳密さはない。</td>
+            <td class="when">正式な記法にこだわらず、資料に1枚差し込めればいい時</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="recommend">
+      <b>今回のケースなら：</b>draw.io を開いたら、左側の図形パネル下部にある検索窓に<code>bpmn</code>と入力すると、開始・終了イベントやゲートウェイなど公式シェイプが一式出てきます。それをドラッグ&ドロップするだけで、次の章の図のようなものがすぐ描けます。
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">02</span>最低限読める4つの記号</h2>
+    <p class="section-lede">全部の記法を覚える必要はありません。まずはこの4つだけで大半の業務フローは描けます。</p>
+
+    <div class="diagram-frame">
+      <div class="legend-grid">
+        <div class="legend-item">
+          <svg viewBox="0 0 90 90" width="72" height="72" role="img" aria-label="開始イベント: 細い線の丸">
+            <circle cx="45" cy="45" r="30" fill="none" stroke="currentColor" stroke-width="2.5"/>
+          </svg>
+          <div class="name">開始イベント</div>
+          <div class="desc">細い丸。<br>プロセスの起点</div>
+        </div>
+        <div class="legend-item">
+          <svg viewBox="0 0 90 90" width="72" height="72" role="img" aria-label="タスク: 角丸の四角">
+            <rect x="12" y="20" width="66" height="50" rx="10" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="2"/>
+          </svg>
+          <div class="name">タスク</div>
+          <div class="desc">角丸の四角。<br>一つの作業</div>
+        </div>
+        <div class="legend-item">
+          <svg viewBox="0 0 90 90" width="72" height="72" role="img" aria-label="ゲートウェイ: ひし形の分岐点">
+            <polygon points="45,10 80,45 45,80 10,45" fill="var(--decision-soft)" stroke="var(--decision)" stroke-width="2"/>
+          </svg>
+          <div class="name">ゲートウェイ</div>
+          <div class="desc">ひし形。<br>条件分岐・合流</div>
+        </div>
+        <div class="legend-item">
+          <svg viewBox="0 0 90 90" width="72" height="72" role="img" aria-label="終了イベント: 太い線の丸">
+            <circle cx="45" cy="45" r="30" fill="none" stroke="currentColor" stroke-width="5"/>
+          </svg>
+          <div class="name">終了イベント</div>
+          <div class="desc">太い丸。<br>プロセスの終点</div>
+        </div>
+      </div>
+    </div>
+    <p class="tight" style="font-size:0.88rem; color:var(--ink-muted);">これに加えて、「誰が（何が）その作業をするか」を横帯（レーン）で分けると、担当の境界がはっきりします。次の例で使っています。</p>
+  </section>
+
+  <section>
+    <h2><span class="num">03</span>具体例：CREからCSへの新システム紹介</h2>
+    <p class="section-lede">前の話に出た「CREが新しい業務効率化システムをCSに紹介する」場面を想定し、「問い合わせ対応フロー」を実際に描いてみます。</p>
+
+    <div class="diagram-frame">
+      <svg viewBox="0 0 940 420" width="100%" role="img" aria-label="問い合わせ対応フロー図。CS担当レーンで問い合わせ内容を確認したのち、ゲートウェイでよくある質問かどうかを判定する。よくある質問の場合はシステムレーンが自動回答して完了し、該当しない場合はCS担当が個別対応して完了する。">
+          <defs>
+            <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+              <path d="M0,0 L10,5 L0,10 z" fill="currentColor"/>
+            </marker>
+          </defs>
+
+          <!-- pool border -->
+          <rect x="6" y="6" width="928" height="408" rx="6" fill="none" stroke="var(--border)" stroke-width="1.5"/>
+          <!-- lane divider -->
+          <line x1="6" y1="212" x2="934" y2="212" stroke="var(--border)" stroke-width="1.5"/>
+          <!-- label column divider -->
+          <line x1="118" y1="6" x2="118" y2="414" stroke="var(--border)" stroke-width="1.5"/>
+
+          <!-- lane fills -->
+          <rect x="7" y="7" width="111" height="204" fill="var(--accent-soft)"/>
+          <rect x="7" y="213" width="111" height="200" fill="var(--system-soft)"/>
+
+          <!-- lane labels -->
+          <text x="62" y="109" transform="rotate(-90 62 109)" text-anchor="middle" font-size="15" font-weight="500" fill="var(--accent)">CS担当</text>
+          <text x="62" y="313" transform="rotate(-90 62 313)" text-anchor="middle" font-size="15" font-weight="500" fill="var(--system)">システム（自動）</text>
+
+          <!-- start event -->
+          <circle cx="190" cy="108" r="22" fill="var(--surface)" stroke="currentColor" stroke-width="2.5"/>
+          <text x="190" y="145" text-anchor="middle" font-size="13" fill="var(--ink-muted)">問い合わせ受信</text>
+
+          <!-- task 1 -->
+          <rect x="252" y="78" width="150" height="60" rx="10" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="2"/>
+          <text x="327" y="103" text-anchor="middle" font-size="14" fill="var(--ink)">内容を確認</text>
+          <text x="327" y="122" text-anchor="middle" font-size="14" fill="var(--ink)">する</text>
+
+          <!-- gateway -->
+          <polygon points="470,80 498,108 470,136 442,108" fill="var(--decision-soft)" stroke="var(--decision)" stroke-width="2"/>
+          <text x="470" y="164" text-anchor="middle" font-size="13" fill="var(--ink-muted)">よくある質問か？</text>
+
+          <!-- task no (individual, CS lane) -->
+          <rect x="592" y="78" width="160" height="60" rx="10" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="2"/>
+          <text x="672" y="103" text-anchor="middle" font-size="14" fill="var(--ink)">CS担当が個別</text>
+          <text x="672" y="122" text-anchor="middle" font-size="14" fill="var(--ink)">対応する</text>
+
+          <!-- end event B (CS lane) -->
+          <circle cx="880" cy="108" r="22" fill="var(--surface)" stroke="currentColor" stroke-width="5"/>
+          <text x="880" y="145" text-anchor="middle" font-size="13" fill="var(--ink-muted)">完了（個別）</text>
+
+          <!-- task yes (system lane) -->
+          <rect x="592" y="276" width="160" height="60" rx="10" fill="var(--system-soft)" stroke="var(--system)" stroke-width="2"/>
+          <text x="672" y="301" text-anchor="middle" font-size="14" fill="var(--ink)">自動回答を</text>
+          <text x="672" y="320" text-anchor="middle" font-size="14" fill="var(--ink)">送信する</text>
+
+          <!-- end event A (system lane) -->
+          <circle cx="880" cy="306" r="22" fill="var(--surface)" stroke="currentColor" stroke-width="5"/>
+          <text x="880" y="343" text-anchor="middle" font-size="13" fill="var(--ink-muted)">完了（自動）</text>
+
+          <!-- connectors -->
+          <line x1="212" y1="108" x2="248" y2="108" stroke="currentColor" stroke-width="2" marker-end="url(#arrow)"/>
+          <line x1="402" y1="108" x2="438" y2="108" stroke="currentColor" stroke-width="2" marker-end="url(#arrow)"/>
+
+          <line x1="498" y1="108" x2="588" y2="108" stroke="var(--accent)" stroke-width="2" marker-end="url(#arrow)"/>
+          <text x="543" y="97" text-anchor="middle" font-size="12.5" fill="var(--accent)">該当しない</text>
+
+          <polyline points="470,136 470,306 588,306" fill="none" stroke="var(--system)" stroke-width="2" marker-end="url(#arrow)"/>
+          <text x="440" y="230" text-anchor="middle" font-size="12.5" fill="var(--system)" transform="rotate(-90 440 230)">該当する</text>
+
+          <line x1="752" y1="108" x2="854" y2="108" stroke="currentColor" stroke-width="2" marker-end="url(#arrow)"/>
+          <line x1="752" y1="306" x2="854" y2="306" stroke="currentColor" stroke-width="2" marker-end="url(#arrow)"/>
+      </svg>
+    </div>
+    <figcaption>問い合わせ対応フロー（新システム導入後）。CS担当レーンで内容を確認し、ゲートウェイで「よくある質問か」を判定。該当すればシステムが自動回答し、該当しなければCS担当が個別対応する。</figcaption>
+
+    <p class="tight">この図のポイントは、ゲートウェイの分岐で<strong class="mark">「どこまでがCS担当の仕事で、どこからシステムが自動で引き取るか」</strong>が一目でわかることです。ここが文章の説明だけだと一番ズレやすい部分でもあります。</p>
+  </section>
+
+  <section>
+    <h2><span class="num">04</span>描くときの4つのコツ</h2>
+    <ol class="tips">
+      <li><b>最初から完璧を目指さない。</b>まずは「主要な分岐が1〜2箇所ある」くらいのシンプルな図で十分です。細かい例外処理は後から足せます。</li>
+      <li><b>レーンは「誰が（何が）やるか」で分ける。</b>今回のように「人（CS担当）」と「システム（自動）」で分けると、業務側が一番知りたい境界線がそのまま図になります。</li>
+      <li><b>矢印には条件をラベルとして書く。</b>「該当する／しない」のように、分岐の条件を矢印の近くに書いておくと、後で見返した人も迷いません。</li>
+      <li><b>描いたら関係者に見せて確認する。</b>図を完成させることより、それを見せながら「ここは合ってますか」とすり合わせる会話をすることが本来の目的です。</li>
+    </ol>
+  </section>
+</main>

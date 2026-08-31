@@ -96,3 +96,4 @@ tail -f ~/.claude/cron-logs/learning-notes-auto-commit.log
 - [2026-08-16: SETUP.mdとREADME.mdの違い、そしてSETUP.mdという慣習の位置づけ](notes/2026-08-16-setup-md-vs-readme-convention.md)
 - [2026-08-27: GASプロジェクトの外部公開（Webアプリ／API実行可能ファイル／ライブラリ）の仕組みと、claspでのデプロイ操作](notes/2026-08-27-gas-external-publish-webapp-api-library.md)
 - [2026-08-28: BPMNとは何か：業務フロー表記法の基礎と実務での使い方](notes/2026-08-28-bpmn-notation-basics.md)
+- [2026-08-31: GASでコードから動的にトリガーを作成する際の承認ダイアログと、動的トリガーの一般的な用途](notes/2026-08-31-gas-dynamic-trigger-authorization.md)

@@ -99,3 +99,6 @@ tail -f ~/.claude/cron-logs/learning-notes-auto-commit.log
 - [2026-08-31: GASでコードから動的にトリガーを作成する際の承認ダイアログと、動的トリガーの一般的な用途](notes/2026-08-31-gas-dynamic-trigger-authorization.md)
 - [2026-08-31: SlackのInteractivity機構とNotion API連携によるVOC登録フローの設計メモ（Request URL/Socket Mode、Bot Tokenスコープ、Webアプリ公開のセキュリティと組織単位の制限）](notes/2026-08-31-slack-interactivity-notion-registration-flow.md)
 - [2026-09-01: GASで「エディタ上のコード」と「デプロイしたアプリ」が別々になっている理由と、デプロイし忘れの弊害](notes/2026-09-01-gas-editor-code-vs-deployed-app.md)
+- [2026-09-01: Notion API連携の実装検証で使った「使い捨てシェルスクリプト」パターンと、存在しないプロパティ名を渡した際の実際の挙動](notes/2026-09-01-notion-api-verification-shell-scripts.md)
+- [2026-09-01: 「確定した変更」と「まだ確定していない変更」が同じ作業ツリーに混在するときの分離方法（`git stash push -- <path>`）とdevice_bashでの削除権限の壁](notes/2026-09-01-git-stash-path-scoped.md)
+- [2026-09-01: Notionのタイトルプロパティに日付を入れて運用していたことによるソート不具合](notes/2026-09-01-notion-title-property-date-sort-pitfall.md)

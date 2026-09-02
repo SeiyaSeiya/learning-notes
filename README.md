@@ -103,3 +103,4 @@ tail -f ~/.claude/cron-logs/learning-notes-auto-commit.log
 - [2026-09-01: 「確定した変更」と「まだ確定していない変更」が同じ作業ツリーに混在するときの分離方法（`git stash push -- <path>`）とdevice_bashでの削除権限の壁](notes/2026-09-01-git-stash-path-scoped.md)
 - [2026-09-01: Notionのタイトルプロパティに日付を入れて運用していたことによるソート不具合](notes/2026-09-01-notion-title-property-date-sort-pitfall.md)
 - [2026-09-01: Slackの「Incoming Webhookでの投稿」と「chat.postMessageでの投稿」の違い、および「メッセージの更新」に2種類ある話](notes/2026-09-01-slack-incoming-webhook-vs-chat-postmessage.md)
+- [2026-09-02: 既にpush済みのコミットを書き換える際の安全な手順（fetchで確認→必要ならcherry-pick→`--force-with-lease`）](notes/2026-09-02-git-rewrite-already-pushed-commit-safely.md)

@@ -104,3 +104,4 @@ tail -f ~/.claude/cron-logs/learning-notes-auto-commit.log
 - [2026-09-01: Notionのタイトルプロパティに日付を入れて運用していたことによるソート不具合](notes/2026-09-01-notion-title-property-date-sort-pitfall.md)
 - [2026-09-01: Slackの「Incoming Webhookでの投稿」と「chat.postMessageでの投稿」の違い、および「メッセージの更新」に2種類ある話](notes/2026-09-01-slack-incoming-webhook-vs-chat-postmessage.md)
 - [2026-09-02: 既にpush済みのコミットを書き換える際の安全な手順（fetchで確認→必要ならcherry-pick→`--force-with-lease`）](notes/2026-09-02-git-rewrite-already-pushed-commit-safely.md)
+- [2026-09-04: GASプロジェクト間連携で片方の仕様変更がもう片方を壊した話と、「どちらを直すべきか」の判断基準](notes/2026-09-04-gas-cross-project-integration-bug-ownership.md)

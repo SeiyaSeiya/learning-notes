@@ -106,3 +106,4 @@ tail -f ~/.claude/cron-logs/learning-notes-auto-commit.log
 - [2026-09-02: 既にpush済みのコミットを書き換える際の安全な手順（fetchで確認→必要ならcherry-pick→`--force-with-lease`）](notes/2026-09-02-git-rewrite-already-pushed-commit-safely.md)
 - [2026-09-04: GASプロジェクト間連携で片方の仕様変更がもう片方を壊した話と、「どちらを直すべきか」の判断基準](notes/2026-09-04-gas-cross-project-integration-bug-ownership.md)
 - [2026-09-09: ステートマシン（状態機械）とは何か：基本概念と要件定義・設計での活用](notes/2026-09-09-state-machine-basics.md)
+- [2026-09-10: headless実行（`claude -p`）の認証切れを防ぐ：長期OAuthトークン（`CLAUDE_CODE_OAUTH_TOKEN`）による無人実行対応](notes/2026-09-10-claude-code-oauth-token-headless-auth.md)

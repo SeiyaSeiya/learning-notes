@@ -108,3 +108,4 @@ tail -f ~/.claude/cron-logs/learning-notes-auto-commit.log
 - [2026-09-09: ステートマシン（状態機械）とは何か：基本概念と要件定義・設計での活用](notes/2026-09-09-state-machine-basics.md)
 - [2026-09-10: headless実行（`claude -p`）の認証切れを防ぐ：長期OAuthトークン（`CLAUDE_CODE_OAUTH_TOKEN`）による無人実行対応](notes/2026-09-10-claude-code-oauth-token-headless-auth.md)
 - [2026-09-13: Projects配下の全リポジトリを自動でgit pullするシェルスクリプトの設計と、bareリポジトリを使った動作確認](notes/2026-09-13-git-pull-all-script-and-bare-repo-testing.md)
+- [2026-09-16: MCPとは何か：概要とClaude Code headless実行での自動利用](notes/2026-09-16-mcp-overview-and-claude-code-headless.md)

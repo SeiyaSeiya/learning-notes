@@ -110,3 +110,4 @@ tail -f ~/.claude/cron-logs/learning-notes-auto-commit.log
 - [2026-09-13: Projects配下の全リポジトリを自動でgit pullするシェルスクリプトの設計と、bareリポジトリを使った動作確認](notes/2026-09-13-git-pull-all-script-and-bare-repo-testing.md)
 - [2026-09-16: MCPとは何か：概要とClaude Code headless実行での自動利用](notes/2026-09-16-mcp-overview-and-claude-code-headless.md)
 - [2026-09-17: 基本情報技術者試験の学習リソース調査と学習計画](notes/2026-09-17-fe-exam-study-plan.md)
+- [2026-09-18: gitのfast-forwardマージと`--ff-only`（worktreeで作ったコミットを本体に取り込む場面）](notes/2026-09-18-git-fast-forward-merge-and-ff-only.md)

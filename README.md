@@ -111,3 +111,4 @@ tail -f ~/.claude/cron-logs/learning-notes-auto-commit.log
 - [2026-09-16: MCPとは何か：概要とClaude Code headless実行での自動利用](notes/2026-09-16-mcp-overview-and-claude-code-headless.md)
 - [2026-09-17: 基本情報技術者試験の学習リソース調査と学習計画](notes/2026-09-17-fe-exam-study-plan.md)
 - [2026-09-18: gitのfast-forwardマージと`--ff-only`（worktreeで作ったコミットを本体に取り込む場面）](notes/2026-09-18-git-fast-forward-merge-and-ff-only.md)
+- [2026-09-29: Googleドライブをgitのリモートリポジトリ代わりに使う方法（ベアリポジトリ運用）](notes/2026-09-29-google-drive-as-git-remote-bare-repo.md)

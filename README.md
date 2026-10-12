@@ -115,3 +115,4 @@ tail -f ~/.claude/cron-logs/learning-notes-auto-commit.log
 - [2026-10-12: VS Codeのターミナルの色を変更する方法（テーマ・settings.json・コントラスト補正）](notes/2026-10-12-vscode-terminal-color-customization.md)
 - [2026-10-12: TIL（Today I Learned）とは何か、learning-notesとの違い、手書きTILは別リポジトリで運用する判断](notes/2026-10-12-til-and-learning-notes-repo-design.md)
 - [2026-10-12: 自己学習・ポートフォリオが進まないときの考え方と、題材（バス時刻・メンタル記録・OS/コンテナ自作）・API構成・技術選定理由の整理](notes/2026-10-12-self-study-and-portfolio-planning.md)
+- [2026-10-12: READMEの書き方：読みやすいドキュメントのためのベストプラクティス（読者の絞り込み・基本構成・よくある失敗・運用のコツ）](notes/2026-10-12-readme-writing-best-practices.md)

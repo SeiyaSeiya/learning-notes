@@ -113,3 +113,4 @@ tail -f ~/.claude/cron-logs/learning-notes-auto-commit.log
 - [2026-09-18: gitのfast-forwardマージと`--ff-only`（worktreeで作ったコミットを本体に取り込む場面）](notes/2026-09-18-git-fast-forward-merge-and-ff-only.md)
 - [2026-09-29: Googleドライブをgitのリモートリポジトリ代わりに使う方法（ベアリポジトリ運用）](notes/2026-09-29-google-drive-as-git-remote-bare-repo.md)
 - [2026-10-12: VS Codeのターミナルの色を変更する方法（テーマ・settings.json・コントラスト補正）](notes/2026-10-12-vscode-terminal-color-customization.md)
+- [2026-10-12: TIL（Today I Learned）とは何か、learning-notesとの違い、手書きTILは別リポジトリで運用する判断](notes/2026-10-12-til-and-learning-notes-repo-design.md)

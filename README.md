@@ -118,3 +118,4 @@ tail -f ~/.claude/cron-logs/learning-notes-auto-commit.log
 - [2026-10-12: READMEの書き方：読みやすいドキュメントのためのベストプラクティス（読者の絞り込み・基本構成・よくある失敗・運用のコツ）](notes/2026-10-12-readme-writing-best-practices.md)
 - [2026-10-18: ghコマンドでのリポジトリ作成（`gh repo create`）と、`.gitignore`・`.env`・`.DS_Store`の基本](notes/2026-10-18-gh-repo-create-and-gitignore-basics.md)
 - [2026-10-18: rbenvでRubyをバージョンアップする手順（3.3.0 → 4.0.7）と、`rbenv install`系コマンド・Bundlerの基礎](notes/2026-10-18-rbenv-ruby-version-upgrade.md)
+- [2026-11-06: GASで土日に加えて祝日も判定する方法と、営業日判定を1つの関数に集約する設計（Googleカレンダー・実行中キャッシュ・失敗時のフォールバック）](notes/2026-11-06-gas-japanese-holiday-business-day-check.md)

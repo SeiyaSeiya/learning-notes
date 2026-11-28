@@ -122,3 +122,4 @@ tail -f ~/.claude/cron-logs/learning-notes-auto-commit.log
 - [2026-11-27: Railsのマイグレーションと大規模DBの扱い（structure.sql・部分ユニークインデックス・外部キー・ビュー・安全なマイグレーションの定石）](notes/2026-11-27-rails-migration-and-large-db-handling.md)
 - [2026-11-27: RailsのN+1対策とパフォーマンス改善のパターン（includes/preload/eager_loadの使い分け・一括import・delete_all・複合インデックス・メモ化）](notes/2026-11-27-rails-n-plus-one-and-performance-patterns.md)
 - [2026-11-27: RailsのSidekiqによる非同期処理の設計パターン（1件1ジョブ・進捗管理・リトライ方針・キュー設計・テスト）](notes/2026-11-27-rails-sidekiq-background-jobs.md)
+- [2026-11-28: grep・awk・パイプを使ったコマンド出力の検索と抽出](notes/2026-11-28-grep-awk-pipeline-text-extraction.md)
